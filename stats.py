@@ -7,4 +7,16 @@ def word_count():
         if word != wordds:
             counter +=1
     print(f"{counter} words found in the document")
-word_count()
+def indevidual_characters():
+     from main import get_book_text
+     import string
+     freq = {}
+     words = get_book_text("books/frankenstein.txt")
+     characters = words.lower()
+     for symbol in characters:
+        if symbol in freq:
+            freq[symbol] += 1
+        else:
+            freq[symbol] = 1
+     print(freq)
+indevidual_characters()
